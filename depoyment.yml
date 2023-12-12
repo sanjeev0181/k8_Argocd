@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name:  netflix-app
   #namespace: nginx-argocd
 spec:
   selector:
     matchLabels:
-      app: nginx
+      app:  netflix-app
   replicas: 2 # tells deployment to run 2 pods matching the template
   template:
     metadata:
       labels:
-        app: nginx
+        app:  netflix-app
     spec:
       containers:
-      - name: nginx
-        image: nginx:1.14.2
+      - name:  netflix-app
+        image: sanjeev0181/netflix
         ports:
         - containerPort: 80
